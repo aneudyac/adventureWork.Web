@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AdventureWorks2019ModelStoreContainer" CdmEntityContainer="AdventureWorks2019Entities">
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="AdventureWorks2019Model.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="AdventureWorks2019Model.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="BusinessEntityID" ColumnName="BusinessEntityID" />
+          <ScalarProperty Name="NationalIDNumber" ColumnName="NationalIDNumber" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+          <ScalarProperty Name="OrganizationLevel" ColumnName="OrganizationLevel" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+          <ScalarProperty Name="SalariedFlag" ColumnName="SalariedFlag" />
+          <ScalarProperty Name="VacationHours" ColumnName="VacationHours" />
+          <ScalarProperty Name="SickLeaveHours" ColumnName="SickLeaveHours" />
+          <ScalarProperty Name="CurrentFlag" ColumnName="CurrentFlag" />
+          <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nomina2">
+      <EntityTypeMapping TypeName="AdventureWorks2019Model.Nomina2">
+        <MappingFragment StoreEntitySet="Nomina2">
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="PayFrequency" ColumnName="PayFrequency" />
+          <ScalarProperty Name="RateChangeDate" ColumnName="RateChangeDate" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PersonType" ColumnName="PersonType" />
+          <ScalarProperty Name="NationalIDNumber" ColumnName="NationalIDNumber" />
+          <ScalarProperty Name="BusinessEntityId" ColumnName="BusinessEntityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

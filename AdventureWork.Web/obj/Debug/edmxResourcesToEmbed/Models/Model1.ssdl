@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdventureWorks2019Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6005: The data type 'hierarchyid' is currently not supported for the target Entity Framework version; the column 'OrganizationNode' in the table 'AdventureWorks2019.HumanResources.Employee' was excluded.-->
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="BusinessEntityID" />
+    </Key>
+    <Property Name="BusinessEntityID" Type="int" Nullable="false" />
+    <Property Name="NationalIDNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="LoginID" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="OrganizationLevel" Type="smallint" StoreGeneratedPattern="Computed" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BirthDate" Type="date" Nullable="false" />
+    <Property Name="MaritalStatus" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="Gender" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="HireDate" Type="date" Nullable="false" />
+    <Property Name="SalariedFlag" Type="bit" Nullable="false" />
+    <Property Name="VacationHours" Type="smallint" Nullable="false" />
+    <Property Name="SickLeaveHours" Type="smallint" Nullable="false" />
+    <Property Name="CurrentFlag" Type="bit" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'AdventureWorks2019.dbo.Nomina2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Nomina2">
+    <Key>
+      <PropertyRef Name="BusinessEntityId" />
+      <PropertyRef Name="NationalIDNumber" />
+      <PropertyRef Name="PersonType" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Apellido" />
+      <PropertyRef Name="Cargo" />
+      <PropertyRef Name="Genero" />
+      <PropertyRef Name="DepartmentID" />
+      <PropertyRef Name="Departamento" />
+      <PropertyRef Name="ShiftID" />
+      <PropertyRef Name="Rate" />
+      <PropertyRef Name="RateChangeDate" />
+      <PropertyRef Name="PayFrequency" />
+    </Key>
+    <Property Name="BusinessEntityId" Type="int" Nullable="false" />
+    <Property Name="NationalIDNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="PersonType" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="8" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cargo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Genero" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="DepartmentID" Type="smallint" Nullable="false" />
+    <Property Name="Departamento" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShiftID" Type="tinyint" Nullable="false" />
+    <Property Name="Rate" Type="money" Nullable="false" />
+    <Property Name="RateChangeDate" Type="datetime" Nullable="false" />
+    <Property Name="PayFrequency" Type="tinyint" Nullable="false" />
+    <Property Name="Salary" Type="money" />
+  </EntityType>
+  <EntityContainer Name="AdventureWorks2019ModelStoreContainer">
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="HumanResources" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="HumanResources" store:Type="Tables" />
+    <EntitySet Name="Nomina2" EntityType="Self.Nomina2" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Nomina2].[BusinessEntityId] AS [BusinessEntityId], 
+    [Nomina2].[NationalIDNumber] AS [NationalIDNumber], 
+    [Nomina2].[PersonType] AS [PersonType], 
+    [Nomina2].[Title] AS [Title], 
+    [Nomina2].[Nombre] AS [Nombre], 
+    [Nomina2].[Apellido] AS [Apellido], 
+    [Nomina2].[Cargo] AS [Cargo], 
+    [Nomina2].[Genero] AS [Genero], 
+    [Nomina2].[DepartmentID] AS [DepartmentID], 
+    [Nomina2].[Departamento] AS [Departamento], 
+    [Nomina2].[ShiftID] AS [ShiftID], 
+    [Nomina2].[Rate] AS [Rate], 
+    [Nomina2].[RateChangeDate] AS [RateChangeDate], 
+    [Nomina2].[PayFrequency] AS [PayFrequency], 
+    [Nomina2].[Salary] AS [Salary]
+    FROM [dbo].[Nomina2] AS [Nomina2]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

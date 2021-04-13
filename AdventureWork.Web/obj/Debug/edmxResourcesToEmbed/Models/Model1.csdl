@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdventureWorks2019Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="BusinessEntityID" />
+    </Key>
+    <Property Name="BusinessEntityID" Type="Int32" Nullable="false" />
+    <Property Name="NationalIDNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginID" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrganizationLevel" Type="Int16" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MaritalStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="HireDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SalariedFlag" Type="Boolean" Nullable="false" />
+    <Property Name="VacationHours" Type="Int16" Nullable="false" />
+    <Property Name="SickLeaveHours" Type="Int16" Nullable="false" />
+    <Property Name="CurrentFlag" Type="Boolean" Nullable="false" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="AdventureWorks2019Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Department" EntityType="Self.Department" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" />
+    <EntitySet Name="Nomina2" EntityType="AdventureWorks2019Model.Nomina2" />
+  </EntityContainer>
+  <EntityType Name="Nomina2">
+    <Key>
+      <PropertyRef Name="BusinessEntityId" />
+      <PropertyRef Name="NationalIDNumber" />
+      <PropertyRef Name="PersonType" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Apellido" />
+      <PropertyRef Name="Cargo" />
+      <PropertyRef Name="Genero" />
+      <PropertyRef Name="DepartmentID" />
+      <PropertyRef Name="Departamento" />
+      <PropertyRef Name="ShiftID" />
+      <PropertyRef Name="Rate" />
+      <PropertyRef Name="RateChangeDate" />
+      <PropertyRef Name="PayFrequency" />
+    </Key>
+    <Property Name="BusinessEntityId" Type="Int32" Nullable="false" />
+    <Property Name="NationalIDNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PersonType" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cargo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Genero" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+    <Property Name="DepartmentID" Type="Int16" Nullable="false" />
+    <Property Name="Departamento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShiftID" Type="Byte" Nullable="false" />
+    <Property Name="Rate" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="RateChangeDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PayFrequency" Type="Byte" Nullable="false" />
+    <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+</Schema>
